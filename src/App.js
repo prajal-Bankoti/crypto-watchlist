@@ -1,12 +1,12 @@
 
 import './App.css';
 import {Stoks} from "../src/components/stock"
+import LoginPage from "./components/Login"
 function App() {
   return (
     <div className="App">
-      <Stoks/>
-
-    </div>
+      <LoginPage/>
+     </div>
   );
 }
 

@@ -3,63 +3,77 @@ body {
   margin: 0px;
   height: 100%;
   overflow: hidden;
-  background-image: url("https://www.reuters.com/resizer/OKjVQvrpZfxhLbnzcoXsgZPj9g4=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/5E6IUHSNIJNVRGSYQGA3Z6TXNY.jpg");
+  background: rgb(34, 40, 49);
+  /* background-image: url("https://www.reuters.com/resizer/OKjVQvrpZfxhLbnzcoXsgZPj9g4=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/5E6IUHSNIJNVRGSYQGA3Z6TXNY.jpg"); */
 }
 .box {
   width: 100%;
+  overflow: auto;
   height: 97vh;
+  margin-top: 120px;
 }
 #main-box {
-  height: 99%;
   width: 70%;
-  overflow: auto;
   margin: auto;
+
   background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(252, 230, 233);
 }
 
 .stock-list:hover {
   cursor: pointer;
+
   background-color: rgb(253, 253, 253);
 }
 
 .stock-list {
   width: 100%;
+  border: 4px solid rgb(0, 173, 181);
   background-color: white;
 }
 #input {
-  width: 68%;
+  width: 100%;
   height: 75px;
-
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 173, 181);
   position: fixed;
+  left: 0px;
+  top: 0px;
+  margin-bottom: 440px;
 }
 
 #main-box h3 {
+  width: 68%;
   color: green;
   margin: 10px auto;
+  display: none;
+}
+#input img {
+  color: rgb(71, 71, 71);
+  border-radius: 50%;
+  float: right;
+  width: 3%;
+  margin: 10px 30px 0 50px;
 }
 #input h4 {
-  color: rgb(71, 71, 71);
-  text-align: right;
-  float: right;
-  margin: -30px 30px 0 50px;
+  display: none;
 }
 #input div {
   float: left;
   text-align: left;
   font-size: 25px;
   margin-left: 3%;
-  color: rgb(128, 124, 124);
+  color: rgb(245, 240, 240);
   margin-top: 10px;
   font-weight: bold;
 }
 #main-box input {
-  width: 96%;
-  height: 30px;
+  width: 30%;
+
+  height: 40px;
   font-size: 20px;
   padding-left: 3%;
-  margin: 0px auto 50px auto;
+  background-color: rgb(57, 62, 70);
+  color: white;
+  margin: 10px auto 0px auto;
 }
 
 input[type="text"] {
@@ -72,9 +86,10 @@ input[type="text"] {
   text-align: left;
   float: left;
   margin: auto;
+  margin-bottom: 30px;
+  border-radius: 30px;
   font-family: Open Sans, sans-serif;
   padding: 15px 0px 5px 20px;
-
   border: rgb(243, 240, 240) solid 0.1px;
 }
 .stock-list :nth-child(4) {
@@ -90,11 +105,10 @@ input[type="text"] {
   width: 20%;
   float: left;
   text-align: right;
-  /* background: rgb(27, 115, 248); */
   font-size: 15px;
 }
 .stock-list :nth-child(2) {
-  width: 40%;
+  width: 35%;
   float: left;
   font-size: 15px;
   margin-left: 10%;
@@ -105,6 +119,7 @@ input[type="text"] {
   float: left;
   text-align: left;
   width: 7%;
+  border-radius: 50%;
   /* background-color: rgb(194, 192, 192); */
   height: 100%;
 }
@@ -116,50 +131,23 @@ input[type="text"] {
   font-size: 15px;
   height: 100%;
 }
-
+.stock-pop {
+  width: 5%;
+  height: 50px;
+  float: left;
+  background: transparent;
+}
 /* //////////////////////////////////////////////////////////////////////// */
 
-.stock-pop {
-  position: absolute;
-  width: 35%;
-  height: 50px;
-  background: white;
-  margin: -14px auto 0px 30.6%;
-}
-.stock-pop :nth-child(1),
-.stock-pop :nth-child(2) {
+.stock-pop :nth-child(1) {
   color: black;
-  background-color: rgb(255, 255, 255);
-  font-size: 10px;
-  border: 2px rgb(128, 125, 125) solid;
+  background-color: transparent;
+  font-size: 2px;
   float: right;
-  padding: 0px 9px;
-  width: 5%;
-  margin: 6px 0;
-  margin-right: 1%;
+  width: 65%;
   height: 36px;
-  border-radius: 4px;
 }
-.stock-pop :nth-child(2) {
-  margin-right: 4%;
-}
-.stock-pop :nth-child(3),
-.stock-pop :nth-child(4) {
-  background-color: red;
-  font-size: 26px;
-  font-weight: bold;
-  float: right;
-  padding: 6px 7px 0px 12px;
-  color: white;
-  margin: 4px 5% 0px 0px;
-  width: 5%;
-  text-align: center;
-  height: 36px;
-  border-radius: 4px;
-}
-.stock-pop :nth-child(4) {
-  background-color: rgb(27, 115, 248);
-}
+
 .bottom-box {
   width: 70%;
   height: 30px;
@@ -180,24 +168,17 @@ input[type="text"] {
 /* //////////////////////////////////////////////////////////////////////// */
 @media screen and (max-width: 1180px) {
   #main-box {
-    width: 90%;
+    width: 99%;
   }
   #input {
-    width: 90%;
+    width: 99%;
   }
-  .stock-pop {
+  /* .stock-pop {
     margin: -14px auto 0px 49.6%;
   }
-  .stock-pop :nth-child(1),
-  .stock-pop :nth-child(2),
-  .stock-pop :nth-child(3),
-  .stock-pop :nth-child(4) {
+  .stock-pop :nth-child(1) {
     width: 11%;
-  }
-  .stock-pop :nth-child(3),
-  .stock-pop :nth-child(4) {
-    padding-left: 10px;
-  }
+  } */
 }
 @media screen and (max-width: 580px) {
   #main-box {
@@ -206,20 +187,14 @@ input[type="text"] {
   .box {
     width: 99%;
   }
-  .stock-pop {
+  /* .stock-pop {
     width: 65%;
     margin: -14px auto 0px 20.6%;
-  }
-  .stock-pop :nth-child(1),
-  .stock-pop :nth-child(2),
-  .stock-pop :nth-child(3),
-  .stock-pop :nth-child(4) {
+  } */
+  /* .stock-pop :nth-child(1) {
     width: 11%;
-  }
-  .stock-pop :nth-child(3),
-  .stock-pop :nth-child(4) {
-    padding-left: 10px;
-  }
+  } */
+
   #input {
     width: 99%;
   }
@@ -237,24 +212,30 @@ input[type="text"] {
   font-size: 20px;
   position: fixed;
   margin-top: -5px;
-
+  border-radius: 10px;
+  font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  color: rgb(92, 92, 92);
-  background-color: rgb(238, 238, 238);
+  color: rgb(252, 252, 252);
+  background-color: rgb(0, 173, 181);
 }
 
 .card:nth-child(1) {
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 .card-1 {
   width: 100%;
   height: 40px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
 }
 .card-1 :nth-child(1) {
   width: 80%;
   margin: 20px 7%;
   float: left;
+  color: rgb(41, 40, 40);
   height: 90%;
   background-color: rgb(255, 255, 255);
   padding-top: 1%;
@@ -264,8 +245,55 @@ input[type="text"] {
 
 #radio {
   width: 100%;
+  color: white;
   margin-top: 40px;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   padding: 15px 0;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(34, 40, 49);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(170, 169, 169);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.login-page {
+  width: 100%;
+  height: 100vh;
+  background-color: yellowgreen;
+  background-image: url("https://optimalidm.com/wp-content/uploads/2020/06/Types-of-Authentication-1536x681.jpg");
+  background-size: cover;
+  background-position: cover;
+}
+.login {
+  background-color: rgb(0, 0, 0);
+  width: 180px;
+  height: 30px;
+  border: 2px solid white;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(235, 233, 233);
+}
+.login-page :nth-child(1){
+  margin-bottom: 40vh;
+  height: 10px;
+  width: 10px;
 }
