@@ -193,8 +193,8 @@ export function Stoks() {
               }}
             />
           ) : watchList.length === 0 ? (
-            <div className="favlist">
-              your favorite list is empty search and add favorite list
+            <div className="favlist">Hi&nbsp;{uid.userName}&nbsp;your favorite list is empty search and add
+              favorite list
             </div>
           ) : (
             watchList.map((el) => (
