@@ -11,7 +11,7 @@ import { getDocs } from "firebase/firestore";
 import { doc, deleteDoc } from "firebase/firestore";
 import Search from "./search";
 import { Card } from "./card";
-
+import { Logout } from "./Logout";
 const axios = require("axios");
 
 export function Stoks() {
@@ -25,10 +25,13 @@ export function Stoks() {
   const [formet, setFormet] = useState(false);
   const [sort, setSort] = useState(false);
   const [watchList, setWatchList] = useState([]);
+  const [showLog, setShowLog] = useState(false);
+
   const uid = JSON.parse(localStorage.getItem("auth"));
 
   ///////////////////////////////////////////////////////////
-  
+ 
+/////////////////////////////////////////////////////////////////
   useEffect(() => {
     async function showData() {
       try {
@@ -45,7 +48,7 @@ export function Stoks() {
     showData();
   }, [update, sort]);
 
-//////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////
 
   const fetchData = async (e) => {
     const querySnapshot = await getDocs(collection(db, uid.uid));
@@ -57,7 +60,6 @@ export function Stoks() {
   };
 
   /////////////////////////////////////////////////////////
-
 
   useEffect(() => {
     fetchData();
@@ -139,7 +141,13 @@ export function Stoks() {
               />
             )}
           </div>
-          <img src={uid.profilePic} alt="" />
+          <img
+            onClick={() => {
+              setShowLog(!showLog);
+            }}
+            src={uid.profilePic}
+            alt=""
+          />
           <h4>{stockdata.length}</h4>
           <input
             onChange={(e) => {
@@ -159,6 +167,7 @@ export function Stoks() {
             placeholder="Search Stocks..."
             id=""
           />
+          <Logout showLog={showLog} />
         </div>
 
         <Card value={card} formet={setFormet} sort={sort} setsort={setSort} />

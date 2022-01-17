@@ -12,7 +12,9 @@ export default function Search({ value }) {
   //   const [data, setData] = useState([]);
   const uid = JSON.parse(localStorage.getItem("auth")).uid;
   const [pro, setPro] = useState(false);
+
   ///////////////////////////////////////////////////////////////
+  
   const fetchData = async () => {
     const querySnapshot = await getDocs(collection(db, uid));
     let arr = [];
