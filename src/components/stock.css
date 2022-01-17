@@ -9,19 +9,18 @@ body {
 .box {
   width: 100%;
   overflow: auto;
-  height: 97vh;
+  height: 92vh;
   margin-top: 120px;
+
 }
 #main-box {
   width: 70%;
   margin: auto;
-
   background-color: rgb(255, 255, 255);
 }
 
 .stock-list:hover {
   cursor: pointer;
-
   background-color: rgb(253, 253, 253);
 }
 
@@ -46,16 +45,25 @@ body {
   margin: 10px auto;
   display: none;
 }
-#input img {
+#input img,.count-1 {
   color: rgb(71, 71, 71);
   border-radius: 50%;
   float: right;
   width: 3%;
+  cursor: pointer;
   margin: 10px 30px 0 50px;
 }
-#input h4 {
-  display: none;
+.count-1{
+  margin: 10px 0 0 10px;
+  height: 34px;
+  background-color: rgb(71, 71, 71);
+  border: 1px solid white;
+  color: white;
+  padding-top: 9px;
 }
+/* #input h4 {
+  display: none;
+} */
 #input div {
   float: left;
   text-align: left;
@@ -134,6 +142,7 @@ input[type="text"] {
 .stock-pop {
   width: 5%;
   height: 50px;
+  margin-top: -15px;
   float: left;
   background: transparent;
 }
@@ -145,6 +154,7 @@ input[type="text"] {
   font-size: 2px;
   float: right;
   width: 65%;
+  padding: 10px 16px 10px 16px;
   height: 36px;
 }
 
@@ -175,10 +185,17 @@ input[type="text"] {
   }
   /* .stock-pop {
     margin: -14px auto 0px 49.6%;
+   */
+  .stock-pop :nth-child(2) {
+    width: 20%;
+    background-color: blue;
+    display: none;
   }
-  .stock-pop :nth-child(1) {
-    width: 11%;
-  } */
+  #input img ,.count-1{
+   
+    width:35px;
+  
+  }
 }
 @media screen and (max-width: 580px) {
   #main-box {
@@ -194,12 +211,35 @@ input[type="text"] {
   /* .stock-pop :nth-child(1) {
     width: 11%;
   } */
-
+  .stock-list :nth-child(2) {
+    display: none;
+  }
+  .stock-list :nth-child(3) {
+    margin-left: 15%;
+  }
+  .stock-list :nth-child(1) {
+    width: 10%;
+  }
+  .stock-pop{
+    margin-left: 16%;
+  }
+  .stock-pop :nth-child(1) {
+    width: 20px;
+    margin-top: -7px;
+    float: right;
+    height: 30px;
+    text-align: right;
+  }
   #input {
     width: 99%;
   }
   .stock-list {
     width: 93%;
+  }
+  #input img,.count-1 {
+   
+    width:35px;
+  
   }
 }
 /* ///////////////////////////////////////////////// */
@@ -304,7 +344,7 @@ input[type="text"] {
 .log {
   width: 150px;
   height: 45px;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   color: #fff;
   padding: 20px;
   padding-left: 30px;
@@ -313,25 +353,28 @@ input[type="text"] {
   border: 2px solid rgb(0, 173, 181);
   float: right;
   margin-right: 0px;
+  border-radius: 10px;
   right: 10px;
 }
 
 .log.arrow-top {
   margin-top: 40px;
 }
-.log button{
+.log button {
   padding: 10px;
   width: 80%;
- 
+
   font-size: 20px;
   margin: auto;
   margin-bottom: 20px;
   border-radius: 10px;
 }
+
 .log.arrow-top:after {
   content: " ";
   position: absolute;
   right: 30px;
+
   top: -15px;
   border-top: none;
   border-right: 15px solid transparent;

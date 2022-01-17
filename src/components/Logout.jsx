@@ -4,6 +4,7 @@ export function Logout({ showLog }) {
       style={{ display: showLog ? "block" : "none" }}
       className="log arrow-top"
     >
+      <div></div>
       <button
         onClick={() => {
           localStorage.removeItem("auth");

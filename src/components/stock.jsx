@@ -148,7 +148,7 @@ export function Stoks() {
             src={uid.profilePic}
             alt=""
           />
-          <h4>{stockdata.length}</h4>
+          <h4 className="count-1">{watchList.length}</h4>
           <input
             onChange={(e) => {
               setSearch(e.target.value);
@@ -252,7 +252,8 @@ export function Stoks() {
                   {el.current_price}
                 </div>
                 <div className="stock-pop">
-                  <DeleteOutlineIcon
+                  <DeleteOutlineIcon 
+                 className="stock-pop-1"
                     onClick={() => {
                       console.log(el);
                       showUpdate(el);
