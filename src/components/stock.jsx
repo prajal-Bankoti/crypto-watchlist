@@ -12,6 +12,7 @@ import { doc, deleteDoc } from "firebase/firestore";
 import Search from "./search";
 import { Card } from "./card";
 import { Logout } from "./Logout";
+import { compose } from "@mui/system";
 const axios = require("axios");
 
 export function Stoks() {
@@ -30,8 +31,10 @@ export function Stoks() {
   const uid = JSON.parse(localStorage.getItem("auth"));
 
   ///////////////////////////////////////////////////////////
- 
-/////////////////////////////////////////////////////////////////
+  if (!uid) {
+    window.location.href = "/";
+  }
+  /////////////////////////////////////////////////////////////////
   useEffect(() => {
     async function showData() {
       try {
@@ -148,7 +151,9 @@ export function Stoks() {
             src={uid.profilePic}
             alt=""
           />
-          <h4 className="count-1">{watchList.length}</h4>
+          <h4 className="count-1" style={{ display: watch ? "none" : "block" }}>
+            {watchList.length}
+          </h4>
           <input
             onChange={(e) => {
               setSearch(e.target.value);
@@ -252,8 +257,8 @@ export function Stoks() {
                   {el.current_price}
                 </div>
                 <div className="stock-pop">
-                  <DeleteOutlineIcon 
-                 className="stock-pop-1"
+                  <DeleteOutlineIcon
+                    className="stock-pop-1"
                     onClick={() => {
                       console.log(el);
                       showUpdate(el);
