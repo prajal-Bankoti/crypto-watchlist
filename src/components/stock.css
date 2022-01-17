@@ -4,7 +4,7 @@ body {
   height: 100%;
   overflow: hidden;
   background: rgb(34, 40, 49);
-  /* background-image: url("https://www.reuters.com/resizer/OKjVQvrpZfxhLbnzcoXsgZPj9g4=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/5E6IUHSNIJNVRGSYQGA3Z6TXNY.jpg"); */
+  /* background-image: url("https://www.verdict.co.uk/wp-content/uploads/2019/12/blockchain-cryptocurrency-predictions-2020.jpg"); */
 }
 .box {
   width: 100%;
@@ -343,10 +343,10 @@ input[type="text"] {
 
 .log {
   width: 150px;
-  height: 45px;
+  height: 100px;
   background-color: rgb(0, 0, 0);
   color: #fff;
-  padding: 20px;
+  
   padding-left: 30px;
   position: absolute;
   margin: 20px;
@@ -369,7 +369,13 @@ input[type="text"] {
   margin-bottom: 20px;
   border-radius: 10px;
 }
+#name{
+  text-align: center;
+  font-size: 1px;
+  margin-bottom: 10px;
+  color: rgb(255, 166, 0);
 
+}
 .log.arrow-top:after {
   content: " ";
   position: absolute;
@@ -380,4 +386,14 @@ input[type="text"] {
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
   border-bottom: 15px solid black;
+}
+.favlist{
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+  word-spacing: 3px;
+  text-transform: uppercase;
+  
 }

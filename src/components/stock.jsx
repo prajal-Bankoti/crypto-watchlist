@@ -12,7 +12,7 @@ import { doc, deleteDoc } from "firebase/firestore";
 import Search from "./search";
 import { Card } from "./card";
 import { Logout } from "./Logout";
-import { compose } from "@mui/system";
+
 const axios = require("axios");
 
 export function Stoks() {
@@ -30,11 +30,11 @@ export function Stoks() {
 
   const uid = JSON.parse(localStorage.getItem("auth"));
 
-  ///////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////
   if (!uid) {
     window.location.href = "/";
   }
-  /////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////
   useEffect(() => {
     async function showData() {
       try {
@@ -51,7 +51,7 @@ export function Stoks() {
     showData();
   }, [update, sort]);
 
-  //////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////
 
   const fetchData = async (e) => {
     const querySnapshot = await getDocs(collection(db, uid.uid));
@@ -62,7 +62,7 @@ export function Stoks() {
     setWatchList(arr);
   };
 
-  /////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     fetchData();
@@ -86,7 +86,7 @@ export function Stoks() {
     }
   }, [sort]);
 
-  ////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////
 
   async function showSearchData() {
     const filter = stockdata.filter((e) => {
@@ -96,7 +96,7 @@ export function Stoks() {
     setCard(false);
   }
 
-  ////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////
 
   async function showUpdate(el) {
     const querySnapshot = await getDocs(collection(db, uid.uid));
@@ -110,7 +110,7 @@ export function Stoks() {
     await fetchData();
   }
 
-  /////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////
 
   return (
     <div
@@ -125,6 +125,7 @@ export function Stoks() {
       }}
     >
       <div id="main-box">
+        {/* /////////////////////////////////////////////////////////////////// */}
         <div id="input">
           <div>
             {" "}
@@ -174,9 +175,11 @@ export function Stoks() {
           />
           <Logout showLog={showLog} />
         </div>
+        {/* /////////////////////////////////////////////////////////////////// */}
 
         <Card value={card} formet={setFormet} sort={sort} setsort={setSort} />
 
+        {/* /////////////////////////////////////////////////////////////////// */}
         <div className="scrool-box">
           {watch ? (
             <Search
@@ -189,6 +192,10 @@ export function Stoks() {
                 watchList,
               }}
             />
+          ) : watchList.length === 0 ? (
+            <div className="favlist">
+              your favorite list is empty search and add favorite list
+            </div>
           ) : (
             watchList.map((el) => (
               <div
@@ -270,12 +277,15 @@ export function Stoks() {
           )}
         </div>
       </div>
+      {/* /////////////////////////////////////////////////////////////////// */}
 
       {show.length === 0 && stockdata.length === 0 ? (
         <CircularProgress style={{ marginTop: "200px", overflow: "hidden" }} />
       ) : (
         <></>
       )}
+
+      {/* /////////////////////////////////////////////////////////////////// */}
     </div>
   );
 }

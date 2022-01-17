@@ -9,11 +9,11 @@ import { doc, deleteDoc } from "firebase/firestore";
 import { db, collection, addDoc } from "../firebase";
 
 export default function Search({ value }) {
-  //   const [data, setData] = useState([]);
+  
   const uid = JSON.parse(localStorage.getItem("auth")).uid;
   const [pro, setPro] = useState(false);
 
-  ///////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////
   
   const fetchData = async () => {
     const querySnapshot = await getDocs(collection(db, uid));
@@ -28,7 +28,7 @@ export default function Search({ value }) {
     fetchData();
   }, []);
 
-  //////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////
 
   async function addcrypto(el) {
     setPro(true);
@@ -38,7 +38,7 @@ export default function Search({ value }) {
     await  setPro(false);
   }
 
-  ////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////
 
   async function showUpdate(el) {
     setPro(true);
